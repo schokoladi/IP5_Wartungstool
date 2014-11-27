@@ -17,11 +17,11 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/', function(){
 
-    $wvertr = DB::table('Wartungsvertraege')->get();
-    return $wvertr;
-    //$vertraege = DB::select('select * from Wartungsvertraege');
+    //$wvertr = DB::table('Wartungsvertraege')->get();
+    //return $wvertr;
+    $vertraege = DB::select('select * from Wartungsvertraege');
 
-    //dd($vertraege);
+    dd($vertraege);
     /*$wv1 = new Wartungsvertrag;
     $wv1->Titel = 'Test1 Eloquent';
     $wv1->Beschreibung = 'pipapo';
