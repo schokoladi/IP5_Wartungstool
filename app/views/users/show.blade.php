@@ -1,9 +1,5 @@
-<!doctype html>
-<html>
+@extends('layouts.default')
 
-<body>
-
-<h1>Hallo, {{ $user->Name }}</h1>
-
-</body>
-</html>
+@section('content')
+    <h1>Hallo, {{ $user->Name }}</h1>
+@stop

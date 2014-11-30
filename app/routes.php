@@ -28,6 +28,8 @@ Route::get('users/{name}', function($name){
     return View::make('users.show')->withUser($user);
 });
 
+
+
 // Einfacher DB-Zugriff
 //Route::get('/',  function(){
     //$users = DB::table('Users')->get(); // holt alle
