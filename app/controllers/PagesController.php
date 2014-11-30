@@ -4,7 +4,8 @@ class PagesController extends HomeController {
     
     public function home() {
         $name = 'Dominik';
-        return View::make('hello')->with('name', $name);
+        return View::make('HALLO');
+        //return View::make('hello')->with('name', $name);
     }
     
     public function about() {
