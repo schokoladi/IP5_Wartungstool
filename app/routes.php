@@ -18,17 +18,10 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 
 // Blade Test ('seite, welche aufgerufen wird') localhost/about
-Route::get('users', function(){
-    $users = User::all();
-    return View::make('users/index')->withUsers($users);
-});
+//Route::get('users', 'UsersController@index');
+//Route::get('users/{name}', 'UsersController@show');
 
-Route::get('users/{name}', function($name){
-    $user = User::whereName($name)->first();
-    return View::make('users.show')->withUser($user);
-});
-
-
+Route::resource('users', 'UsersController');
 
 // Einfacher DB-Zugriff
 //Route::get('/',  function(){
