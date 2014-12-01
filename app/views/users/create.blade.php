@@ -6,21 +6,15 @@
     {{ Form::open(['route' => 'users.store']) }}
         <div>
             {{ Form::label('Name', 'Name des Users: ') }}
-            {{ Form::text('name') }}
-            {{ $errors->first('name') }}
+            {{ Form::text('Name') }}
+            {{ $errors->first('Name') }}
         </div>
-
-        <div>
-            {{ Form::label('Email', 'E-Mail: ') }}
-            {{ Form::text('e-mail') }}
-        </div>
-
         <div>
             {{ Form::label('Passwort', 'Passwort: ') }}
-            {{ Form::password('password') }}
-            {{ $errors->first('password') }}
+            {{ Form::password('Passwort') }}
+            {{ $errors->first('Passwort') }}
         </div>
-        {{ Form::submit('Mach mau User') }}
+        {{ Form::submit('User erstellen') }}
     {{ Form::close() }}
 
 @stop

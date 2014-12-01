@@ -24,10 +24,13 @@ Route::get('/create', 'PagesController@create');
 
 Route::resource('users', 'UsersController');
 
-
+Route::resource('sessions', 'SessionsController');
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
-Route::resource('sessions', 'SessionsController');
+
+Route::get('admin', function(){
+    return 'Admin page';
+})->before('auth');
 
 // Einfacher DB-Zugriff
 //Route::get('/',  function(){
