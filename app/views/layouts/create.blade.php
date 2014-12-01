@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>CSS Portal - Layout</title>
-{{ HTML::style('css/main.css') }}
-</head>
-<body>
-    <div id="sidemenue">
-        @yield('sidemenue')
+@section('content')
+    <div id="nav">
+        @yield('nav')
     </div>
 
-    <div id="form">
-        @yield('form')
-    </div>
-</body>
-</html>
+    <div id="form1">
+        @yield('form1')
+     </div>
+
+     <div id="form2">
+        @yield('form2')
+     </div>
+@stop

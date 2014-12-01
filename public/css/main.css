@@ -63,18 +63,29 @@ menu {
 
 h1 {
     color: #000000;
-    font-size: 11px;
+    font-size: 16px;
+    font-style: bold;
 }
 
-#sidemenue {
-    background: lightgrey;
-    border-radius: 5px;
-    float: left;
-}
-#form {
+#nav {
+    width: 150px;
+    line-height: 35px;
     background-color: lightgrey;
     border-radius: 5px;
-    clear: both;
+    padding-left: 15px;
+    float:left;
+    font-style: bold;
+}
+
+#form1{
+    margin-left: 170px;
+    width: 795px;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 15px;
+    line-height: 30px;
+
 }
 
 
