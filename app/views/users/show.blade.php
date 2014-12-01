@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.main')
 
 @section('content')
     <h1>Hallo, {{ $user->Name }}</h1>
