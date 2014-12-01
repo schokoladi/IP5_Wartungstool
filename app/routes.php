@@ -23,6 +23,10 @@ Route::get('/about', 'PagesController@about');
 
 Route::resource('users', 'UsersController');
 
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+Route::resource('sessions', 'SessionsController');
+
 // Einfacher DB-Zugriff
 //Route::get('/',  function(){
     //$users = DB::table('Users')->get(); // holt alle
