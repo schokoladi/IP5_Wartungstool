@@ -58,7 +58,6 @@ menu {
 #content {
     background: #FFFFFF;
     border-radius: 10px;
-    border: 1px solid #ebebeb;
     margin: 5px;
 }
 
@@ -66,4 +65,16 @@ h1 {
     color: #000000;
     font-size: 11px;
 }
+
+#sidemenue {
+    background: lightgrey;
+    border-radius: 5px;
+    float: left;
+}
+#form {
+    background-color: lightgrey;
+    border-radius: 5px;
+    clear: both;
+}
+
 

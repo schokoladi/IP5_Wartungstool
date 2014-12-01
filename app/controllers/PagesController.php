@@ -11,6 +11,10 @@ class PagesController extends HomeController {
     public function about() {
         return View::make('about');
     }
+
+    public function create() {
+        return View::make('createtest');
+    }
     
 }
 
