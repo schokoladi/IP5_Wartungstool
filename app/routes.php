@@ -16,6 +16,7 @@ Route::get('/', 'PagesController@home');
 
 // so wird auf der /about-Seite PagesController.php mit der fkt about aufgerufen
 Route::get('/about', 'PagesController@about');
+Route::get('/create', 'PagesController@create');
 
 // Blade Test ('seite, welche aufgerufen wird') localhost/about
 //Route::get('users', 'UsersController@index');
