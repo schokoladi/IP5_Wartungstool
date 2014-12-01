@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Layout</title>
+        <title>blabla</title>
     </head>
 <body>
     @yield('content')
