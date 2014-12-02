@@ -8,8 +8,8 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
     use UserTrait, RemindableTrait;
-    // Timestamps werden standardmässig von Laravel verlangt, überschreiben
-    public $timestamps = false;
+    // Timestamps werden standardmässig von Laravel verlangt, ok
+    public $timestamps = true;
 
     // default-Werte ändern
 	protected $table = 'Users';
