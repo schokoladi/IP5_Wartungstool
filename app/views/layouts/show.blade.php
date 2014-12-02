@@ -1,7 +1,7 @@
 @section('content')
 
-    <div id="form">
-        @yield('form')
+    <div id="show">
+        @yield('show')
     </div>
 
 @stop

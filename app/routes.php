@@ -19,6 +19,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/create', 'PagesController@create');
 Route::get('/show', 'PagesController@show');
 Route::get('/edit', 'PagesController@edit');
+Route::get('/table', 'PagesController@table');
 
 // Blade Test ('seite, welche aufgerufen wird') localhost/about
 //Route::get('users', 'UsersController@index');
