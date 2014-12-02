@@ -27,7 +27,10 @@ Route::get('/table', 'PagesController@table');
 
 Route::resource('users', 'UsersController');
 
+Route::resource('hersteller', 'ArtikelherstellerController');
+
 Route::resource('sessions', 'SessionsController');
+// Spezielle routes für login und logout zum SessionsController
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 

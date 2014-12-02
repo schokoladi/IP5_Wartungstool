@@ -20,7 +20,7 @@ class CreateWartungsvertragsartikelTable extends Migration {
             $table->text('Beschreibung');
             $table->date('Kaufdatum');
             $table->boolean('Verrechnet');
-            $table->decimal('Preis', 6, 2); // Preis mit maximal 6 Stellen, davon 2 Nachkomma
+            $table->decimal('Preis', 8, 2); // Preis mit maximal 6 Stellen, davon 2 Nachkomma
 
             // unsigned ist notwendig bei Fremdschlüsseln!
             $table->integer('Wartungsvertraege_ID')->unsigned();
