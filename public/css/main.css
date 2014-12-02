@@ -77,12 +77,12 @@ h1 {
     font-style: bold;
 }
 
-#form1{
+#form{
     margin-left: 170px;
     width: 795px;
     background-color: lightgrey;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     padding-left: 15px;
     line-height: 30px;
 

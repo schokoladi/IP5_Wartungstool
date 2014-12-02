@@ -1,7 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: chef
- * Date: 01.12.14
- * Time: 16:41
- */ 
+@extends('layouts.main')
+@extends('layouts.edit')
+
+@section('nav')
+Artikel Info<br>
+Garantie hinzufügen<br>
+@stop
+
+@section('form')
+<h1>blablabla</h1>
+
+@stop

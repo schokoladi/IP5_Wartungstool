@@ -3,11 +3,7 @@
         @yield('nav')
     </div>
 
-    <div id="form1">
-        @yield('form1')
-     </div>
-
-     <div id="form2">
-        @yield('form2')
-     </div>
+    <div id="form">
+        @yield('form')
+    </div>
 @stop
