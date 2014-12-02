@@ -23,6 +23,10 @@ class PagesController extends HomeController {
         return View::make('showtest');
     }
 
+    public function table() {
+        return View::make('tabletest');
+    }
+
 
     
 }
