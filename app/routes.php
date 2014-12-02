@@ -28,6 +28,8 @@ Route::get('/table', 'PagesController@table');
 Route::resource('users', 'UsersController');
 
 Route::resource('hersteller', 'ArtikelherstellerController');
+Route::resource('artikel','ArtikelController');
+Route::resource('garantien', 'GarantienController');
 
 Route::resource('sessions', 'SessionsController');
 // Spezielle routes für login und logout zum SessionsController

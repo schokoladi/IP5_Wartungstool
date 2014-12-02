@@ -1,12 +1,12 @@
-@extends('layouts.default')
+@extends('layouts.main')
 
 @section('content')
-    <h1>Alle User</h1>
-    @if($users->count())
-        @foreach ($users as $user)
-            <li>{{ link_to("/users/{$user->Name}", $user->Name) }}</li>
-        @endforeach
+    <h1>Alle Hersteller</h1>
+    @if($herstellers->count())
+    @foreach ($herstellers as $hersteller)
+        <li>{{ link_to("/hersteller/{$hersteller->Name}", $hersteller->Name) }}</li>
+    @endforeach
     @else
-        <p>No Users!</p>
+        <p>Keine Hersteller vorhanden</p>
     @endif
 @stop

@@ -4,7 +4,7 @@
 @section('nav')
 {{ link_to("/hersteller/create", "Hersteller hinzufügen") }}
 {{ link_to("/artikel/create", "Artikel hinzufügen") }}
-{{ link_to("/garantie/create", "Garantie hinzufügen") }}
+{{ link_to("/garantien/create", "Garantie hinzufügen") }}
 @stop
 
 @section('form')

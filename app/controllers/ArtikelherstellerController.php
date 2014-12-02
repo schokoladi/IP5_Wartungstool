@@ -10,12 +10,13 @@ class ArtikelherstellerController extends \BaseController {
 
     public function index() {
         $herstellers = $this->hersteller->all();
-        return View::make('hersteller.index')->withHersteller($herstellers);
+        // "Herstellers" von withHerstellers kann in der view als $herstellers verwendet werden
+        return View::make('hersteller.index')->withHerstellers($herstellers);
     }
 
     public function show($name) {
         $hersteller = $this->hersteller->whereName($name)->first();
-        return View::make('hersteller.show', ['hersteller' => hersteller]);
+        return View::make('hersteller.show', ['hersteller' => $hersteller]);
     }
 
     public function create() {
@@ -24,13 +25,16 @@ class ArtikelherstellerController extends \BaseController {
 
     public function store(){
 
-        dd($this->hersteller->fill(Input::all()));
+        //dd(Input::get('Name')); // ok
+
+        $this->hersteller->Name = Input::get('Name');
         /*if(!$this->user->fill($input)->isValid()) {
             return Redirect::back()->withInput()->withErrors($this->user->errors);
         }*/
         $this->hersteller->save();
 
-        //return Redirect::route('hersteller.index');
+        return Redirect::route('artikel.create');
+
     }
 
 }
