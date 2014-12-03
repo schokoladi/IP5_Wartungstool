@@ -26,6 +26,8 @@ Route::get('/table', 'PagesController@table');
 //Route::get('users/{name}', 'UsersController@show');
 
 Route::resource('users', 'UsersController');
+Route::resource('customers', 'CustomersController');
+
 
 Route::resource('hersteller', 'ArtikelherstellerController');
 Route::resource('artikel','ArtikelController');
