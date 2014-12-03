@@ -2,18 +2,18 @@
 @extends('layouts.create')
 
 @section('nav')
-{{ link_to("/hersteller/create", "Hersteller hinzufügen") }}
-{{ link_to("/artikel/create", "Artikel hinzufügen") }}
-{{ link_to("/garantien/create", "Garantie hinzufügen") }}
+{{ link_to("/manufacturers/create", "Hersteller hinzufügen") }}
+{{ link_to("/articles/create", "Artikel hinzufügen") }}
+{{ link_to("/warranties/create", "Garantie hinzufügen") }}
 @stop
 
 @section('form')
     <h1>Neuen Artikel erfassen</h1>
 
-    {{ Form::open(['route' => 'artikel.store']) }}
+    {{ Form::open(['route' => 'articles.store']) }}
         <div>
             {{ Form::label('Artikelhersteller_ID', 'Hersteller') }}
-            {{ Form::select('Artikelhersteller_ID', $hersteller_options , Input::old('Artikelhersteller_ID')) }}
+            {{ Form::select('Artikelhersteller_ID', $manufacturer_options , Input::old('Artikelhersteller_ID')) }}
         </div>
         <div>
             {{ Form::label('Artikelnummer', 'Artikelnummer: ') }}

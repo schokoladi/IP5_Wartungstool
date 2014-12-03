@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;*/
 
 // Eloquent = Object Relational Mapper -> query data in db
-class Wartungsartikelhersteller extends Eloquent {
+class Warranty extends Eloquent {
 
     public $timestamps = true;
 

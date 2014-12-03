@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;*/
 
 // Eloquent = Object Relational Mapper -> query data in db
-class Artikelhersteller extends Eloquent {
+class Article extends Eloquent {
 
     public $timestamps = true;
 
@@ -16,8 +16,8 @@ class Artikelhersteller extends Eloquent {
      *
      * @var string
      */
-    // Datenbankname in der Mehrzahl
-    protected $table = 'Artikelhersteller';
+    // Datenbankname und Primärschlüssel
+    protected $table = 'Artikel';
     protected $primaryKey = 'ID';
 
     /**

@@ -28,10 +28,9 @@ Route::get('/table', 'PagesController@table');
 Route::resource('users', 'UsersController');
 Route::resource('customers', 'CustomersController');
 
-
-Route::resource('hersteller', 'ArtikelherstellerController');
-Route::resource('artikel','ArtikelController');
-Route::resource('garantien', 'GarantienController');
+Route::resource('manufacturers', 'ManufacturersController');
+Route::resource('articles','ArticlesController');
+Route::resource('warranties', 'WarrantiesController');
 
 Route::resource('sessions', 'SessionsController');
 // Spezielle routes für login und logout zum SessionsController
