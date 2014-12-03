@@ -12,7 +12,7 @@
 
     {{ Form::open(['route' => 'articles.store']) }}
         <div>
-            {{ Form::label('Artikelhersteller_ID', 'Hersteller') }}
+            <span>{{ Form::label('Artikelhersteller_ID', 'Hersteller') }}</span>
             {{ Form::select('Artikelhersteller_ID', $manufacturer_options , Input::old('Artikelhersteller_ID')) }}
         </div>
         <div>
@@ -21,7 +21,7 @@
             {{ $errors->first('Artikelnummer') }}
         </div>
         <div>
-            {{ Form::label('Name', 'Artikelname: ') }}
+            {{ HTML::decode(Form::label('Name', 'Artikelname: ')) }}
             {{ Form::text('Name') }}
             {{ $errors->first('Name') }}
         </div>

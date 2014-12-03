@@ -20,6 +20,25 @@ class Maintenancearticle extends Eloquent {
     protected $table = 'Wartungsvertragsartikel';
     protected $primaryKey = 'ID';
 
+    // Dies ist notwendig für die Regelabfrage
+    protected $fillable = ['Titel', 'Seriennummer'];
+
+    public static $rules = [
+        'Titel'         => 'required',
+        'Seriennummer'  => 'required|unique:Wartungsvertragsartikel',
+    ];
+
+    public $errors;
+
+    public function isValid(){
+
+        $validation = Validator::make($this->attributes, static::$rules);
+        if($validation->passes()) return true;
+        $this->errors = $validation->messages();
+
+        return false;
+    }
+
     /**
      * The attributes excluded from the model's JSON form.
      *

@@ -31,6 +31,8 @@ Route::resource('customers', 'CustomersController');
 Route::resource('manufacturers', 'ManufacturersController');
 Route::resource('articles','ArticlesController');
 Route::resource('warranties', 'WarrantiesController');
+Route::resource('maintenance', 'MaintenanceController');
+Route::resource('maintenancearticles', 'MaintenancearticlesController');
 
 Route::resource('sessions', 'SessionsController');
 // Spezielle routes für login und logout zum SessionsController

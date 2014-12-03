@@ -22,7 +22,7 @@ class Manufacturer extends Eloquent {
 
     // Dies ist notwendig für die Regelabfrage
     protected $fillable = ['Name'];
-    
+
     public static $rules = [
         'Name'      => 'required|unique:Artikelhersteller'
     ];
