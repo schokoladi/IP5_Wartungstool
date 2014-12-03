@@ -2,9 +2,9 @@
 @extends('layouts.create')
 
 @section('nav')
-{{ link_to("/manufacturers/create", "Hersteller hinzufügen") }}
-{{ link_to("/articles/create", "Artikel hinzufügen") }}
-{{ link_to("/warranties/create", "Garantie hinzufügen") }}
+<button type="button" class="btn-menue-act">{{ link_to("/manufacturers/create", "Hersteller hinzufügen") }}</button>
+<button type="button" class="btn-menue">{{ link_to("/articles/create", "Artikel hinzufügen") }}</button>
+<button type="button" class="btn-menue">{{ link_to("/warranties/create", "Garantie hinzufügen") }}</button>
 @stop
 
 @section('form')
@@ -16,6 +16,6 @@
             {{ Form::text('Name') }}
             {{ $errors->first('Name') }}
         </div>
-        {{ Form::submit('Hersteller speichern') }}
+        <button type="button" class="btn">{{ Form::submit('Hersteller speichern') }}</button>
     {{ Form::close() }}
 @stop

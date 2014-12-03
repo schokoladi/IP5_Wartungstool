@@ -24,7 +24,7 @@ p {
 #headerwrap {
     width: 100%;
     float: left;
-    margin-left: 100px;
+    margin-left: 80px;
 }
 
 #header {
@@ -50,7 +50,7 @@ p {
 menu {
     font-size: 13px;
     color: #ffffff;
-    margin-left: 110px;
+    margin-left: 80px;
     padding-top: 9px;
 }
 
@@ -58,36 +58,39 @@ menu {
     width: 100%;
     float: left;
     margin: 0 auto;
-    margin-left: 110px;
+    margin-left: 80px;
 }
 
 #content {
     background: #ffffff;
     border-radius: 10px;
-    margin: 5px;
+    margin: 0px;
 }
 
 h1 {
     color: #000000;
-    font-size: 16px;
+    font-size: 15px;
     font-style: bold;
+    font-family: Verdana;
+    margin-bottom: 10px;
 }
 
 #nav {
-    width: 150px;
-    line-height: 35px;
-    background-color: #f4eee7;
-    border-radius: 5px;
-    padding-left: 15px;
+    width: 160px;
+    background-color: #ffffff;
     float:left;
+    /*line-height: 35px;
+    border-radius: 5px;
     font-style: bold;
+    padding-left: 15px;*/
 }
 
 #form{
     margin-left: 170px;
-    width: 795px;
+    width: 840px;
     background-color: #f4eee7;
     border-radius: 5px;
+    border-style: double;
     padding: 5px;
     padding-left: 15px;
     line-height: 30px;
@@ -118,6 +121,31 @@ th {
 
 .gerade td {
     background-color: #D4CABD;
+}
+
+.btn-menue{
+    width: 160px;
+    height: 35px;
+    border-radius: 5px;
+    border-color: #f4eee7;
+    background-color: #f4eee7;
+}
+
+.btn-menue-act {
+    width: 160px;
+    height: 35px;
+    border-radius: 5px;
+    border-color: #CEC1B4;
+    background-color: #CEC1B4;
+}
+
+.btn{
+    width: 130px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: #B6C4CC;
+    background-color: #B6C4CC;
+
 }
 
 
