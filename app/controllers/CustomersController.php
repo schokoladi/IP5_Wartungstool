@@ -1,6 +1,6 @@
 <?php
 
-class CustomerController extends \BaseController {
+class CustomersController extends \BaseController {
 
     protected $customer;
 
@@ -8,9 +8,10 @@ class CustomerController extends \BaseController {
         $this->customer = $customer;
     }
 
-    public function show() {
+    public function index() {
         $customers = $this->customer->all();
-        return View::make('customers.show')->withKunden($customers);
+        return View::make('customers.index')->withCustomers($customers);
     }
+
 
 }
