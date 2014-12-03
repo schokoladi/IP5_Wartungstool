@@ -18,6 +18,7 @@
         <div>
             {{ Form::label('Name', 'Name: ') }}
             {{ Form::text('Name') }}
+            {{ $errors->first('Name') }}
         </div>
         <div>
             {{ Form::label('Beschreibung', 'Beschreibung: ') }}
@@ -26,14 +27,17 @@
         <div>
             {{ Form::label('Einkaufspreis', 'Einkaufspreis: ') }}
             {{ Form::text('Einkaufspreis') }} CHF
+            {{ $errors->first('Einkaufspreis') }}
         </div>
         <div>
             {{ Form::label('Verkaufspreis', 'Verkaufspreis: ') }}
             {{ Form::text('Verkaufspreis') }} CHF
+            {{ $errors->first('Verkaufspreis') }}
         </div>
         <div>
             {{ Form::label('Dauer', 'Dauer: ') }}
             {{ Form::text('Dauer') }} Monate
+            {{ $errors->first('Dauer') }}
         </div>
         {{ Form::submit('Garantie speichern') }}
     {{ Form::close() }}

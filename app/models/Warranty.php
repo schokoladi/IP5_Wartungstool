@@ -20,6 +20,27 @@ class Warranty extends Eloquent {
     protected $table = 'Wartungsartikelhersteller';
     protected $primaryKey = 'ID';
 
+    // Dies ist notwendig für die Regelabfrage
+    protected $fillable = ['Name', 'Einkaufspreis', 'Verkaufspreis', 'Dauer'];
+
+    public static $rules = [
+        'Name'          => 'required',
+        'Einkaufspreis' => 'required',
+        'Verkaufspreis' => 'required',
+        'Dauer'         => 'required'
+    ];
+
+    public $errors;
+
+    public function isValid(){
+
+        $validation = Validator::make($this->attributes, static::$rules);
+        if($validation->passes()) return true;
+
+        $this->errors = $validation->messages();
+        return false;
+    }
+
     /**
      * The attributes excluded from the model's JSON form.
      *

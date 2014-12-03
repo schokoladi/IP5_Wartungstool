@@ -25,21 +25,24 @@ class ArticlesController extends \BaseController {
 
     public function store(){
 
-        //dd(Input::all()); // ok
+        //dd(Input::all());
 
-        //$this->articles = Input::all();
-        $this->article->Artikelnummer           = Input::get('Artikelnummer');
-        $this->article->Name                    = Input::get('Name');
-        $this->article->Beschreibung            = Input::get('Beschreibung');
-        $this->article->Einkaufspreis           = Input::get('Einkaufspreis');
-        $this->article->Verkaufspreis           = Input::get('Verkaufspreis');
-        $this->article->Artikelhersteller_ID    = Input::get('Artikelhersteller_ID');
-        /*if(!$this->user->fill($input)->isValid()) {
-            return Redirect::back()->withInput()->withErrors($this->user->errors);
-        }*/
-        $this->article->save();
+        if(!$this->article->fill(Input::all())->isValid()) {
+            return Redirect::back()->withInput()->withErrors($this->article->errors);
+        }
+        // Es tritt ein Fehler auf, wenn nur save() aufgerufen wird.
+        // Werte müssen nochmals in das Objekt gespeichert werden
+        else {
+            $this->article->Artikelnummer           = Input::get('Artikelnummer');
+            $this->article->Name                    = Input::get('Name');
+            $this->article->Beschreibung            = Input::get('Beschreibung');
+            $this->article->Einkaufspreis           = Input::get('Einkaufspreis');
+            $this->article->Verkaufspreis           = Input::get('Verkaufspreis');
+            $this->article->Artikelhersteller_ID    = Input::get('Artikelhersteller_ID');
+            $this->article->save();
 
-        return Redirect::route('warranties.create');
+            return Redirect::route('warranties.create');
+        }
 
     }
 

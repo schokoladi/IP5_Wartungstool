@@ -24,14 +24,12 @@ class ManufacturersController extends \BaseController {
 
     public function store(){
 
-        //dd(Input::get('Name')); // ok
+        //dd(Input::all()); // ok
 
-        $this->manufacturer->Name = Input::get('Name');
-        /*if(!$this->user->fill($input)->isValid()) {
-            return Redirect::back()->withInput()->withErrors($this->user->errors);
-        }*/
+        if(!$this->manufacturer->fill(Input::all())->isValid()) {
+            return Redirect::back()->withErrors($this->manufacturer->errors);
+        }
         $this->manufacturer->save();
-
         return Redirect::route('articles.create');
 
     }

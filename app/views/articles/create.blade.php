@@ -18,10 +18,12 @@
         <div>
             {{ Form::label('Artikelnummer', 'Artikelnummer: ') }}
             {{ Form::text('Artikelnummer') }}
+            {{ $errors->first('Artikelnummer') }}
         </div>
         <div>
             {{ Form::label('Name', 'Artikelname: ') }}
             {{ Form::text('Name') }}
+            {{ $errors->first('Name') }}
         </div>
         <div>
             {{ Form::label('Beschreibung', 'Beschreibung: ') }}
@@ -30,10 +32,12 @@
         <div>
             {{ Form::label('Einkaufspreis', 'Einkaufspreis: ') }}
             {{ Form::text('Einkaufspreis') }} CHF
+            {{ $errors->first('Einkaufspreis') }}
         </div>
         <div>
             {{ Form::label('Verkaufspreis', 'Verkaufspreis: ') }}
             {{ Form::text('Verkaufspreis') }} CHF
+            {{ $errors->first('Verkaufspreis') }}
         </div>
         {{ Form::submit('Artikel speichern') }}
     {{ Form::close() }}

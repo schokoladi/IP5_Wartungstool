@@ -20,6 +20,27 @@ class Article extends Eloquent {
     protected $table = 'Artikel';
     protected $primaryKey = 'ID';
 
+    // Dies ist notwendig für die Regelabfrage
+    protected $fillable = ['Artikelnummer', 'Name', 'Einkaufspreis', 'Verkaufspreis'];
+
+    public static $rules = [
+        'Artikelnummer' => 'required|unique:Artikel',
+        'Name'          => 'required|unique:Artikel',
+        'Einkaufspreis' => 'required',
+        'Verkaufspreis' => 'required'
+    ];
+
+    public $errors;
+
+    public function isValid(){
+
+        $validation = Validator::make($this->attributes, static::$rules);
+        if($validation->passes()) return true;
+        $this->errors = $validation->messages();
+
+        return false;
+    }
+
     /**
      * The attributes excluded from the model's JSON form.
      *

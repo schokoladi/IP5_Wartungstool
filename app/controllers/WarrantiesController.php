@@ -27,18 +27,23 @@ class WarrantiesController extends \BaseController {
     public function store(){
 
         //dd(Input::all());
-        $this->warranty->Name           = Input::get('Name');
-        $this->warranty->Beschreibung   = Input::get('Beschreibung');
-        $this->warranty->Einkaufspreis  = Input::get('Einkaufspreis');
-        $this->warranty->Verkaufspreis  = Input::get('Verkaufspreis');
-        $this->warranty->Dauer          = Input::get('Dauer');
-        $this->warranty->Artikel_ID     = Input::get('Artikel_ID');
-        /*if(!$this->user->fill($input)->isValid()) {
-            return Redirect::back()->withInput()->withErrors($this->user->errors);
-        }*/
-        $this->warranty->save();
 
-        return Redirect::route('articles.index');
+        if(!$this->warranty->fill(Input::all())->isValid()) {
+            return Redirect::back()->withInput()->withErrors($this->warranty->errors);
+        }
+        // Es tritt ein Fehler auf, wenn nur save() aufgerufen wird.
+        // Werte müssen nochmals in das Objekt gespeichert werden
+        else {
+            $this->warranty->Name           = Input::get('Name');
+            $this->warranty->Beschreibung   = Input::get('Beschreibung');
+            $this->warranty->Einkaufspreis  = Input::get('Einkaufspreis');
+            $this->warranty->Verkaufspreis  = Input::get('Verkaufspreis');
+            $this->warranty->Dauer          = Input::get('Dauer');
+            $this->warranty->Artikel_ID     = Input::get('Artikel_ID');
+            $this->warranty->save();
+
+            return Redirect::route('articles.index');
+        }
 
     }
 

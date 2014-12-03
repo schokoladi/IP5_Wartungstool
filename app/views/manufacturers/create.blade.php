@@ -14,6 +14,7 @@
         <div>
             {{ Form::label('Name', 'Herstellername: ') }}
             {{ Form::text('Name') }}
+            {{ $errors->first('Name') }}
         </div>
         {{ Form::submit('Hersteller speichern') }}
     {{ Form::close() }}
