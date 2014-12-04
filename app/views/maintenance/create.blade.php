@@ -11,20 +11,15 @@
     <h1>Neuen Wartungsvertrag erfassen</h1>
 
     {{ Form::open(['route' => 'maintenance.store']) }}
+
+        <div>
+            {{ Form::label('Kunden_ID', 'Kunde') }}
+            {{ Form::select('Kunden_ID', $customer_options , $customer_id, ['onChange' => 'this.form.submit()']) }}
+        </div>
         @if(!empty($contact_options))
             <div>
-            @foreach($customer_options as $customer)
-                {{{ $customer }}}
-            @endforeach
-            </div>
-            <div>
                 {{ Form::label('Kontaktpersonen_ID', 'Kontaktperson') }}
-                {{ Form::select('Kontaktpersonen_ID', $contact_options , Input::old('Kontaktpersonen_ID')) }}
-            </div>
-        @else
-            <div>
-                {{ Form::label('Kunden_ID', 'Kunde') }}
-                {{ Form::select('Kunden_ID', $customer_options , Input::old('Kunden_ID'), ['onChange' => 'this.form.submit()']) }}
+                {{ Form::select('Kontaktpersonen_ID', $contact_options) }}
             </div>
         @endif
         <div>
@@ -41,6 +36,6 @@
             {{ Form::label('Beschreibung', 'Beschreibung: ') }}
             {{ Form::textarea('Beschreibung') }}
         </div>
-        {{ Form::submit('Wartungsvertrag speichern', ['class' => 'btn']) }}
+        {{ Form::submit('Wartungsvertrag speichern', ['class' => 'btn', 'name' => 'store']) }}
     {{ Form::close() }}
 @stop

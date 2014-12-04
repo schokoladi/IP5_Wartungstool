@@ -20,11 +20,13 @@ class Maintenance extends Eloquent {
     protected $primaryKey = 'ID';
 
     // Dies ist notwendig für die Regelabfrage
-    protected $fillable = ['Vertragsnummer', 'Titel'];
+    protected $fillable = ['Vertragsnummer', 'Titel', 'Kunden_ID', 'Kontaktpersonen_ID'];
 
     public static $rules = [
         'Vertragsnummer'     => 'required|unique:Wartungsvertraege',
-        'Titel'              => 'required'
+        'Titel'              => 'required',
+        'Kunden_ID'          => 'required',
+        'Kontaktpersonen_ID' => 'required'
     ];
 
     public $errors;
