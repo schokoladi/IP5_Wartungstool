@@ -206,7 +206,7 @@ td.col3, td.col6 {
 
 textarea{
     text-align: left;
-    width: 232px;
+    width: 228px;
     height: 88px;
 }
 
@@ -216,9 +216,11 @@ textarea{
     text-align: left;
 }
 
-#Artikelhersteller_ID{
+select{
     width: 120px;
 }
+
+
 
 
 
