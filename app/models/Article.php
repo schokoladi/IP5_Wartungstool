@@ -30,11 +30,15 @@ class Article extends Eloquent {
         'Verkaufspreis' => 'required'
     ];
 
+    public static $messages = [
+        'required' => '<span class="error">*Pflichtfeld</span>'
+    ];
+
     public $errors;
 
     public function isValid(){
 
-        $validation = Validator::make($this->attributes, static::$rules);
+        $validation = Validator::make($this->attributes, static::$rules, static::$messages);
         if($validation->passes()) return true;
         $this->errors = $validation->messages();
 

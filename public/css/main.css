@@ -85,12 +85,13 @@ h1 {
     padding-left: 15px;*/
 }
 
-#form{
+div#form{
+    border-color: #000000;
     margin-left: 170px;
     width: 840px;
     background-color: #f4eee7;
+    border-style: solid;
     border-radius: 5px;
-    border-style: double;
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 15px;
@@ -105,7 +106,7 @@ h1 {
     width: 980px;
 }
 
-table, th, td {
+/*table, th, td {
     border-collapse: collapse;
     text-align: left;
     padding: 5px;
@@ -123,7 +124,7 @@ th {
 
 .gerade td {
     background-color: #D4CABD;
-}
+}*/
 
 .btn-menue{
     margin-bottom: 5px;
@@ -165,6 +166,58 @@ button a{
     background-color: #B6C4CC;
     font-size: 11px;
     font-family: Verdana;
+}
+
+label {
+    width: 150px;
+    height: 22px;
+    font-size: 10px;
+}
+input {
+    width: 120px;
+    height: 22px;
+    font-size: 10px;
+    border: 0.5px solid #000000;
+}
+
+td.col1, td.col4{
+    width: 150px;
+    height: 22px;
+    vertical-align: top;
+    text-align: right;
+    padding-right: 5px;
+}
+
+td.col2, td.col5 {
+    width: 240px;
+    height: 22px;
+    vertical-align: top;
+    text-align: right;
+    padding-right: 5px;
+}
+
+td.col3, td.col6 {
+    width: 140px;
+    height: 22px;
+    vertical-align: top;
+    text-align: left;
+    padding-right: 5px;
+}
+
+textarea{
+    text-align: left;
+    width: 232px;
+    height: 88px;
+}
+
+.error{
+    color: red;
+    width: 130px;
+    text-align: left;
+}
+
+#Artikelhersteller_ID{
+    width: 120px;
 }
 
 
