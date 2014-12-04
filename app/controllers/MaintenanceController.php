@@ -19,18 +19,24 @@ class MaintenanceController extends \BaseController {
     }
 
     public function create() {
-        $customer_options   = DB::table('Kunden')->orderBy('Name', 'asc')->lists('Name','ID');
-        $contact_options    = DB::table('Kontaktpersonen')->orderBy('Name', 'asc')->lists('Name','ID');
-        return View::make('maintenance.create', array(
+        if(Input::get('Kunden_ID')) $customer_id = Input::get('Kunden_ID');
+        else $customer_id = 0;
+
+        $customer_options   = DB::table('Kunden')->orderBy('ID', 'asc')->lists('Name', 'ID');
+        $contact_options    = DB::table('Kontaktpersonen')->where('Kunden_ID', $customer_id)->orderBy('Name', 'asc')->lists('Name','ID');
+        return View::make('maintenance.create', [
+            'customer_id'       => $customer_id,
             'customer_options'  => $customer_options,
             'contact_options'   => $contact_options
-        ));
+        ]);
     }
 
     public function store(){
 
         //dd(Input::all());
-
+        $customer_id        = Input::get('Kunden_ID');
+        return Redirect::route('maintenance.create', ['Kunden_ID' => $customer_id]);
+        /*
         if(!$this->maintenance->fill(Input::all())->isValid()) {
             return Redirect::back()->withInput()->withErrors($this->maintenance->errors);
         }
@@ -46,7 +52,7 @@ class MaintenanceController extends \BaseController {
             $this->maintenance->save();
 
             return Redirect::route('maintenancearticles.create');
-        }
+        }*/
 
     }
 
