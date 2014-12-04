@@ -39,6 +39,6 @@
             {{ Form::text('Dauer') }} Monate
             {{ $errors->first('Dauer') }}
         </div>
-        {{ Form::submit('Garantie speichern') }}
+        {{ Form::submit('Garantie speichern', ["class"=>"btn"]) }}
     {{ Form::close() }}
 @stop

@@ -70,7 +70,7 @@ menu {
 h1 {
     color: #000000;
     font-size: 15px;
-    font-style: bold;
+    font-weight: bold;
     font-family: Verdana;
     margin-bottom: 10px;
 }
@@ -91,8 +91,10 @@ h1 {
     background-color: #f4eee7;
     border-radius: 5px;
     border-style: double;
-    padding: 5px;
     padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 5px;
     line-height: 30px;
 }
 
@@ -124,14 +126,7 @@ th {
 }
 
 .btn-menue{
-    width: 160px;
-    height: 35px;
-    border-radius: 5px;
-    border-color: #f4eee7;
-    background-color: #f4eee7;
-}
-
-.btn-menue-act {
+    margin-bottom: 5px;
     width: 160px;
     height: 35px;
     border-radius: 5px;
@@ -139,13 +134,39 @@ th {
     background-color: #CEC1B4;
 }
 
-.btn{
-    width: 130px;
-    height: 25px;
+.btn-menue-act {
+    margin-bottom: 5px;
+    width: 160px;
+    height: 35px;
     border-radius: 5px;
-    border-color: #B6C4CC;
-    background-color: #B6C4CC;
+    border-color: #f4eee7;
+    background-color: #f4eee7;
+}
+
+button a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #262626;
+    font-family: Verdana;
 
 }
+
+.btn{
+    float: right;
+    margin-top:20px;
+    margin-bottom: 20px;
+    height: 22px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: auto;
+    color: #262626;
+    border-color: #B6C4CC;
+    border-radius: 6px;
+    background-color: #B6C4CC;
+    font-size: 11px;
+    font-family: Verdana;
+}
+
+
 
 

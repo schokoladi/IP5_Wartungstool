@@ -16,6 +16,6 @@
             {{ Form::text('Name') }}
             {{ $errors->first('Name') }}
         </div>
-        <button type="button" class="btn">{{ Form::submit('Hersteller speichern') }}</button>
+        {{ Form::submit('Hersteller speichern', ["class"=>"btn"]) }}
     {{ Form::close() }}
 @stop

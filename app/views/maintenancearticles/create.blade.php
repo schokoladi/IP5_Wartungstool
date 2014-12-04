@@ -2,9 +2,9 @@
 @extends('layouts.create')
 
 @section('nav')
-{{ link_to("/maintenance/create", "WA erfassen") }}
-{{ link_to("/maintenancearticles/create", "WV-Artikel hinzufügen") }}
-{{ link_to("/services/create", "Service hinzufügen") }}
+<button type="button" class="btn-menue">{{ link_to("/maintenance/create", "WA erfassen") }}</button>
+<button type="button" class="btn-menue-act">{{ link_to("/maintenancearticles/create", "WV-Artikel hinzufügen") }}</button>
+<button type="button" class="btn-menue">{{ link_to("/services/create", "Service hinzufügen") }}</button>
 @stop
 
 @section('form')
@@ -37,6 +37,6 @@
             {{ Form::label('Beschreibung', 'Beschreibung: ') }}
             {{ Form::textarea('Beschreibung') }}
         </div>
-        {{ Form::submit('Wartungsvertragsartikel speichern') }}
+        {{ Form::submit('Wartungsvertragsartikel speichern', ["class"=>"btn"]) }}
     {{ Form::close() }}
 @stop

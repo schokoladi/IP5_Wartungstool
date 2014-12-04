@@ -39,6 +39,6 @@
             {{ Form::text('Verkaufspreis') }} CHF
             {{ $errors->first('Verkaufspreis') }}
         </div>
-        {{ Form::submit('Artikel speichern') }}
+        {{ Form::submit('Artikel speichern', ["class"=>"btn"]) }}
     {{ Form::close() }}
 @stop
