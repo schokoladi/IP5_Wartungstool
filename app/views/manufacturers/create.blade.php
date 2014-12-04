@@ -11,11 +11,17 @@
     <h1>Neuen Hersteller erfassen</h1>
 
     {{ Form::open(['route' => 'manufacturers.store']) }}
-        <div>
-            {{ Form::label('Name', 'Herstellername: ') }}
-            {{ Form::text('Name') }}
-            {{ $errors->first('Name') }}
-        </div>
+        <table>
+        <tr>
+            <td class = "col1">{{ Form::label('Name', 'Herstellername: ') }}</td>
+            <td class = "col2">{{ Form::text('Name') }}</td>
+            <td class = "col3">{{ $errors->first('Name') }}</td>
+            <td class = "col4"></td>
+            <td class = "col5"></td>
+            <td class = "col6"></td>
+        </tr>
+        </table>
+
         {{ Form::submit('Hersteller speichern', ["class"=>"btn"]) }}
     {{ Form::close() }}
 @stop

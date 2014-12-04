@@ -16,7 +16,7 @@
         <tr>
             <td class = "col1">{{ Form::label('Artikelhersteller_ID', 'Hersteller:') }}</td>
             <td class = "col2">{{ Form::select('Artikelhersteller_ID', $manufacturer_options , Input::old('Artikelhersteller_ID')) }}</td>
-            <td class = "col4"></td>
+            <td class = "col3"></td>
             <td class = "col4"></td>
             <td class = "col5"></td>
             <td class = "col6"></td>
