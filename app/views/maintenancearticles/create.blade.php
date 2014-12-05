@@ -13,16 +13,24 @@
     {{ Form::open(['route' => 'maintenancearticles.store']) }}
         <div>
             {{ Form::label('Wartungsvertraege_ID', 'Wartungsvertrag') }}
-            {{ Form::select('Wartungsvertraege_ID', $maintenance_options , Input::old('Wartungsvertraege_ID')) }}
+            {{ Form::select('Wartungsvertraege_ID', $maintenance_options, $maintenance_id) }}
         </div>
         <div>
             {{ Form::label('Artikelhersteller_ID', 'Hersteller') }}
-            {{ Form::select('Artikelhersteller_ID', $manufacturer_options , Input::old('Artikelhersteller_ID')) }}
+            {{ Form::select('Artikelhersteller_ID', $manufacturer_options, $manufacturer_id, ['onChange' => 'this.form.submit()']) }}
         </div>
+        @if(!empty($article_options))
+            <div>
+                {{ Form::label('Artikel_ID', 'Artikel') }}
+                {{ Form::select('Artikel_ID', $article_options, $article_id, ['onChange' => 'this.form.submit()']) }}
+            </div>
+        @endif
+        @if(!empty($warranty_options))
         <div>
-            {{ Form::label('Artikel_ID', 'Artikel') }}
-            {{ Form::select('Artikel_ID', $article_options , Input::old('Artikel_ID')) }}
+            {{ Form::label('Wartungsartikelhersteller_ID', 'Garantie') }}
+            {{ Form::select('Wartungsartikelhersteller_ID', $warranty_options) }}
         </div>
+        @endif
         <div>
             {{ Form::label('Titel', 'Titel: ') }}
             {{ Form::text('Titel') }}
@@ -37,6 +45,6 @@
             {{ Form::label('Beschreibung', 'Beschreibung: ') }}
             {{ Form::textarea('Beschreibung') }}
         </div>
-        {{ Form::submit('Wartungsvertragsartikel speichern', ["class"=>"btn"]) }}
+        {{ Form::submit('Wartungsvertragsartikel speichern', ['class'=>'btn', 'name' => 'store']) }}
     {{ Form::close() }}
 @stop
