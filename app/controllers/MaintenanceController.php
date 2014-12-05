@@ -35,7 +35,9 @@ class MaintenanceController extends \BaseController {
 
         if(!Input::get('store')){
             $customer_id    = Input::get('Kunden_ID');
-            return Redirect::route('maintenance.create', ['customer_id' => $customer_id])->withInput();
+            return Redirect::route('maintenance.create', [
+                'customer_id' => $customer_id
+            ])->withInput();
         }
         // würde wohl auch ohne else funktionieren
         else {
@@ -46,17 +48,17 @@ class MaintenanceController extends \BaseController {
             // Es tritt ein Fehler auf, wenn nur save() aufgerufen wird.
             // Werte müssen nochmals in das Objekt gespeichert werden
             else {
-                $this->maintenance->Vertragsnummer = Input::get('Vertragsnummer');
-                $this->maintenance->Titel = Input::get('Titel');
-                $this->maintenance->Beschreibung = Input::get('Beschreibung');
-                $this->maintenance->Status = TRUE;
-                $this->maintenance->Kunden_ID = Input::get('Kunden_ID');
-                $this->maintenance->Kontaktpersonen_ID = Input::get('Kontaktpersonen_ID');
+                $this->maintenance->Vertragsnummer      = Input::get('Vertragsnummer');
+                $this->maintenance->Titel               = Input::get('Titel');
+                $this->maintenance->Beschreibung        = Input::get('Beschreibung');
+                $this->maintenance->Status              = TRUE;
+                $this->maintenance->Kunden_ID           = Input::get('Kunden_ID');
+                $this->maintenance->Kontaktpersonen_ID  = Input::get('Kontaktpersonen_ID');
                 $this->maintenance->save();
 
-                $maintenance_id = DB::table('Wartungsvertraege')->orderBy('ID', 'desc')->first();
+                $maintenance = DB::table('Wartungsvertraege')->orderBy('ID', 'desc')->first();
 
-                return Redirect::route('maintenancearticles.create', ['maintenance_id' => $maintenance_id->ID]);
+                return Redirect::route('maintenancearticles.create', ['maintenance_id' => $maintenance->ID]);
             }
         }
 
