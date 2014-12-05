@@ -10,7 +10,7 @@ body {
 }
 
 #headerwrap {
-    width: auto;
+    width: 100%;
     margin-left: 120px;
 }
 
@@ -22,13 +22,15 @@ body {
 
 #navigationwrap {
     height: 35px;
+    width: 100%;
     margin-top: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     background: #4d6878;
 }
 
 #navigation{
     margin-left: 100px;
+    padding-top: 10px;
 }
 
 #contentwrap {
@@ -81,71 +83,24 @@ button#form{
     background-color: #f4eee7;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 p {
     padding: 10px;
 }
 
 h1 {
     color: #000000;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 14px;
     font-family: Verdana;
     margin-bottom: 20px;
     text-align: left;
 }
 
-
-
-
-
 #show{
     background-color: #D4CABD;
     border-radius: 5px;
-    padding: 5px;
-    width: 980px;
+    padding: 10px;
+    width: 1080px;
 }
-
-menu {
-    font-size: 13px;
-    color: #ffffff;
-    margin-left: 80px;
-    padding-top: 9px;
-}
-/*table, th, td {
-    border-collapse: collapse;
-    text-align: left;
-    padding: 5px;
-}
-
-th {
-    background-color: #000000;
-    color: #fff;
-    border: 1px solid #fff;
-}
-
-.ungerade td {
-    background-color: #EFEBE5;
-}
-
-.gerade td {
-    background-color: #D4CABD;
-}*/
-
-
-
-
 
 .btn-menue a{
     font-size: 12px;
@@ -169,7 +124,7 @@ th {
     padding-right: 12px;
     width: auto;
     border: outset;
-    border-radius: 6px;
+    border-radius: 5px;
     background-color: #CEC1B4;
     border-color: #CEC1B4;
     font-size: 11px;
@@ -226,29 +181,32 @@ select{
 
 /*Buttons Home*/
 
+td.colleft{
+    text-align: right;
+}
+
+td.colright{
+    text-align: left;
+}
+
 .btn-main{
-    text-align: center;
-    width: 310px;
-    height: 130px;
-    margin: 8px;
-    border-radius: 8px;
+    width: 220px;
+    height: 100px;
+    border-radius: 5px;
     border: outset;
     border-color: #f4eee7;
     background-color: #f4eee7;
+    margin: 4px;
 }
 
 #main{
-    text-align: center;
-    align-content: center;
-    width: 980px;
+    width: 1080px;
+    height: auto;
 }
 
 .btn-main a{
-    text-align: right;
-    font-size: 16px;
+    font-size: 13px;
     font-family: Verdana;
-    margin-top: 40px;
-    margin-bottom: 40px;
     text-decoration: none;
     color: #262626;
 
