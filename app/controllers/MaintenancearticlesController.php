@@ -45,7 +45,7 @@ class MaintenancearticlesController extends \BaseController {
         }
 
         if($article_check == FALSE) $article_id = '';
-        
+
         if(empty($article_id)){
             $article            = DB::table('Artikel')->where('Artikelhersteller_ID', $manufacturer_id)->orderBy('Name', 'asc')->first();
             if(!empty($article)){
@@ -55,7 +55,7 @@ class MaintenancearticlesController extends \BaseController {
                 $article_id     = 0;
             }
         }
-        $warranty_options = DB::table('Wartungsartikelhersteller')->where('Artikel_ID', $article_id)->orderBy('Name', 'asc')->lists('Name','ID');
+        $warranty_options = DB::table('Wartungsartikelhersteller')->where('Artikel_ID', $article_id)->orderBy('Dauer', 'asc')->lists('Name','ID');
 
         return View::make('maintenancearticles.create', [
             'maintenance_id'        => $maintenance_id,
@@ -91,16 +91,17 @@ class MaintenancearticlesController extends \BaseController {
                 $this->maintenancearticle->Titel                        = Input::get('Titel');
                 $this->maintenancearticle->Seriennummer                 = Input::get('Seriennummer');
                 $this->maintenancearticle->Beschreibung                 = Input::get('Beschreibung');
-                $this->maintenancearticle->Kaufdatum                    = Input::get('Kaufdatum');
+                //$this->maintenancearticle->Kaufdatum                    = date()
                 $this->maintenancearticle->Verrechnet                   = FALSE;
                 $this->maintenancearticle->Wartungsvertraege_ID         = Input::get('Wartungsvertraege_ID');
-                $this->maintenancearticle->Artikel_ID                   = Input::get('Artikel_ID');
                 $this->maintenancearticle->Wartungsartikelhersteller_ID = Input::get('Wartungsartikelhersteller_ID');
-                $this->maintenancearticle->save();
-                dd($this->maintenancearticle);
+                $this->maintenancearticle->Artikel_ID                   = Input::get('Artikel_ID');
 
-                $maintenance = DB::table('Wartungsvertraege')->where('Seriennummer', $this->maintenancearticle->Seriennummer)->first();
-                return Redirect::route('maintenancearticles.create',  ['maintenance_id' => $maintenance->ID]);
+                //dd($this->maintenancearticle);
+                $this->maintenancearticle->save();
+
+                $maintenance_id = DB::table('Wartungsvertraege')->where('ID', Input::get('Wartungsvertraege_ID'))->pluck('ID');
+                return Redirect::route('maintenancearticles.create',  ['maintenance_id' => $maintenance_id]);
             }
         }
 
