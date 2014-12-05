@@ -9,7 +9,9 @@
         <div id="header"></div>
     </div>
     <div id="navigationwrap">
-        <div id="navigation">menue {{Breadcrumbs::addCrumb('Home', '/')}}</div>
+        <div id="navigation">
+            Breadcrumbs {{Breadcrumbs::addCrumb('Home', '/');}}
+        </div>
     </div>
     <div id="contentwrap">
         <div id="content">

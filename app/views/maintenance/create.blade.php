@@ -12,30 +12,35 @@
 
     {{ Form::open(['route' => 'maintenance.store']) }}
 
-        <div>
-            {{ Form::label('Kunden_ID', 'Kunde') }}
-            {{ Form::select('Kunden_ID', $customer_options , $customer_id, ['onChange' => 'this.form.submit()']) }}
-        </div>
-        @if(!empty($contact_options))
-            <div>
-                {{ Form::label('Kontaktpersonen_ID', 'Kontaktperson') }}
-                {{ Form::select('Kontaktpersonen_ID', $contact_options) }}
-            </div>
-        @endif
-        <div>
-            {{ Form::label('Titel', 'Titel: ') }}
-            {{ Form::text('Titel') }}
-            {{ $errors->first('Titel') }}
-        </div>
-        <div>
-            {{ Form::label('Vertragsnummer', 'Vertragsnummer: ') }}
-            {{ Form::text('Vertragsnummer') }}
-            {{ $errors->first('Vertragsnummer') }}
-        </div>
-        <div>
-            {{ Form::label('Beschreibung', 'Beschreibung: ') }}
-            {{ Form::textarea('Beschreibung') }}
-        </div>
+    <table>
+        <tr>
+            <td class = "col1">{{ Form::label('Kunden_ID', 'Kunde:') }}</td>
+            <td class = "col2">{{ Form::select('Kunden_ID', $customer_options , $customer_id, ['onChange' => 'this.form.submit()']) }}</td>
+            <td class = "col3"></td>
+            @if(!empty($contact_options))
+            <td class = "col4">{{ Form::label('Kontaktpersonen_ID', 'Kontaktperson:') }}</td>
+            <td class = "col5">{{ Form::select('Kontaktpersonen_ID', $contact_options) }}</td>
+            <td class = "col6"></td>
+            @endif
+        </tr>
+        <tr>
+            <td class = "col1">{{ Form::label('Titel', 'Titel: ') }}</td>
+            <td class = "col2">{{ Form::text('Titel') }}</td>
+            <td class = "col3">{{ $errors->first('Titel') }}</td>
+            <td class = "col4">{{ Form::label('Vertragsnummer', 'Vertragsnummer: ') }}</td>
+            <td class = "col5">{{ Form::text('Vertragsnummer') }}</td>
+            <td class = "col6">{{ $errors->first('Vertragsnummer') }}</td>
+        </tr>
+        <tr>
+            <td class = "col1">{{ Form::label('Beschreibung', 'Beschreibung: ') }}</td>
+            <td class = "col2" colspan="2">{{ Form::textarea('Beschreibung') }}</td>
+            <td class = "col3"></td>
+            <td class = "col4"></td>
+            <td class = "col5"></td>
+            <td class = "col6"></td>
+        </tr>
+    </table>
+
         {{ Form::submit('Wartungsvertrag speichern', ['class' => 'btn', 'name' => 'store']) }}
     {{ Form::close() }}
 @stop
