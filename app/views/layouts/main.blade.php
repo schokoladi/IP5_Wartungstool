@@ -13,7 +13,7 @@
         </div>
         <div id="navigationwrap">
         <div id="navigation">
-            <menu>Menu</menu>
+            menue {{Breadcrumbs::addCrumb('Home', '/')}}
         </div>
         </div>
         <div id="contentwrap">

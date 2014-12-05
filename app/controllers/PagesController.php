@@ -3,7 +3,7 @@
 class PagesController extends HomeController {
     
     public function home() {
-        return 'Hallo';
+        return View::make('home');
         //return View::make('hello')->with('name', $name);
     }
     

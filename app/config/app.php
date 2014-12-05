@@ -95,7 +95,8 @@ return array(
 
 	'providers' => array(
 
-		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
+        'Creitive\Breadcrumbs\BreadcrumbsServiceProvider',
+        'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Session\CommandsServiceProvider',
@@ -150,7 +151,8 @@ return array(
 
 	'aliases' => array(
 
-		'App'             => 'Illuminate\Support\Facades\App',
+        'Breadcrumbs' => 'Creitive\Breadcrumbs\Facades\Breadcrumbs',
+        'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',

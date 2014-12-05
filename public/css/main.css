@@ -73,6 +73,7 @@ h1 {
     font-weight: bold;
     font-family: Verdana;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #nav {
@@ -85,12 +86,12 @@ h1 {
     padding-left: 15px;*/
 }
 
-div#form{
-    border-color: #000000;
-    margin-left: 170px;
+button#form{
+    border-color: #f4eee7;
+    margin-left: 10px;
     width: 840px;
     background-color: #f4eee7;
-    border-style: solid;
+    border-style: outset;
     border-radius: 5px;
     padding-left: 15px;
     padding-right: 15px;
@@ -126,6 +127,8 @@ th {
     background-color: #D4CABD;
 }*/
 
+
+
 .btn-menue{
     margin-bottom: 5px;
     width: 160px;
@@ -144,28 +147,31 @@ th {
     background-color: #f4eee7;
 }
 
-button a{
+.btn-menue a{
     font-size: 12px;
     text-decoration: none;
     color: #262626;
     font-family: Verdana;
+}
 
+.btn-menue-act a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #262626;
+    font-family: Verdana;
 }
 
 .btn{
     float: right;
-    margin-top:20px;
-    margin-bottom: 20px;
-    height: 22px;
+    height: 26px;
     padding-left: 12px;
     padding-right: 12px;
     width: auto;
-    color: #262626;
-    border-color: #B6C4CC;
+    border: outset;
     border-radius: 6px;
     background-color: #B6C4CC;
+    border-color: #B6C4CC;
     font-size: 11px;
-    font-family: Verdana;
 }
 
 label {
@@ -219,6 +225,40 @@ textarea{
 select{
     width: 120px;
 }
+
+/*Buttons Home*/
+
+.btn-main{
+    text-align: center;
+    width: 310px;
+    height: 130px;
+    margin: 8px;
+    border-radius: 8px;
+    border: outset;
+    border-color: #f4eee7;
+    background-color: #f4eee7;
+}
+
+#main{
+    text-align: center;
+    align-content: center;
+    width: 980px;
+}
+
+.btn-main a{
+    text-align: right;
+    font-size: 16px;
+    font-family: Verdana;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    color: #262626;
+
+}
+
+
+
+
 
 
 
