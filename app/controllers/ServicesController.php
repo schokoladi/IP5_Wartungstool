@@ -47,7 +47,7 @@ class ServicesController extends \BaseController {
             $this->service->Preis = Input::get('Preis');
             $this->service->Wartungsvertraege_ID = Input::get('Wartungsvertraege_ID');
             $this->service->save();
-            return 'bla';
+
             $maintenance_id = DB::table('Wartungsvertraege')->where('ID', Input::get('Wartungsvertraege_ID'))->pluck('ID');
             return Redirect::route('services.create',  ['maintenance_id' => $maintenance_id]);
         }
