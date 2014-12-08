@@ -20,6 +20,30 @@ class Service extends Eloquent {
     protected $table = 'Services';
     protected $primaryKey = 'ID';
 
+    // Dies ist notwendig für die Regelabfrage
+    protected $fillable = ['Artikelnummer', 'Titel', 'Preis'];
+
+    public static $rules = [
+        'Artikelnummer' => 'required',
+        'Titel'         => 'required',
+        'Preis'         => 'required'
+    ];
+
+    public static $messages = [
+        'required' => '<span class="error">*Pflichtfeld</span>'
+    ];
+
+    public $errors;
+
+    public function isValid(){
+
+        $validation = Validator::make($this->attributes, static::$rules, static::$messages);
+        if($validation->passes()) return true;
+        $this->errors = $validation->messages();
+
+        return false;
+    }
+
     /**
      * The attributes excluded from the model's JSON form.
      *
