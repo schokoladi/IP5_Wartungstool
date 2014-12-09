@@ -38,6 +38,11 @@ body {
     text-decoration: none;
 }
 
+#navigation a:hover {
+    text-decoration:underline;
+    color: #f4eee7;
+}
+
 #breadcrumb{
     color: white;
 }
@@ -119,11 +124,19 @@ h1 {
     font-family: Verdana;
 }
 
+.btn-menue a:hover{
+    color: #4d6878;
+}
+
 .btn-menue-act a{
     font-size: 12px;
     text-decoration: none;
     color: #262626;
     font-family: Verdana;
+}
+
+.btn-menue-act a:hover{
+    color: #4d6878;
 }
 
 .btn{
