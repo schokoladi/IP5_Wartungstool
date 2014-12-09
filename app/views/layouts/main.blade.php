@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CSS Portal - Layout</title>
+<title>Wartungstool</title>
 {{ HTML::style('css/main.css') }}
+{{ HTML::style('css/datepicker.css') }}
+{{ HTML::script('js/bootstrap-datepicker.js') }}
 </head>
 <body>
     <div id="headerwrap">
@@ -10,7 +12,7 @@
     </div>
     <div id="navigationwrap">
         <div id="navigation">
-            Breadcrumbs {{Breadcrumbs::addCrumb('Home', '/');}}
+            @yield("menu")
         </div>
     </div>
     <div id="contentwrap">
