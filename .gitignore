@@ -6,7 +6,3 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
-
-# Ignore PHPStorm files
-**/.idea/workspace.xml
-**/.idea/tasks.xml

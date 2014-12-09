@@ -37,7 +37,7 @@
         </tr>
         <tr>
             <td class="col1">{{ Form::label('Preis', 'Preis: ') }}</td>
-            <td class="col2">{{ Form::text('Preis') }} CHF</td>
+            <td class="col2">CHF {{ Form::text('Preis') }}</td>
             <td class="col3"> {{ $errors->first('Preis') }}</td>
             <td class="col4">{{ Form::label('Kaufdatum', 'Kaufdatum: ') }}</td>
             <td class="col5">{{ Form::text('Kaufdatum') }}</td>

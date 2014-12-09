@@ -3,8 +3,10 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+        "creitive/breadcrumbs": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
