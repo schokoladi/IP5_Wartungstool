@@ -33,6 +33,16 @@ body {
     padding-top: 10px;
 }
 
+#navigation a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#breadcrumb{
+    color: white;
+}
+
+
 #contentwrap {
     margin-left: 100px;
     width: 100%;

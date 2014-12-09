@@ -1,6 +1,10 @@
 @extends('layouts.main')
 @extends('layouts.create')
 
+@section('menu')
+<div id="breadcrumb">{{ link_to("/", "Home") }} > {{ link_to("/show", "Wartungsverträge") }}</div>
+@stop
+
 @section('nav')
 <button type="button" class="btn-menue-act">{{ link_to("/maintenance/create", "WA erfassen") }}</button>
 <button type="button" class="btn-menue">{{ link_to("/maintenancearticles/create", "WV-Artikel hinzufügen") }}</button>

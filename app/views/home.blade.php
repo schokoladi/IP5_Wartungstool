@@ -1,5 +1,9 @@
 @extends('layouts.main')
 
+@section('menu')
+{{ link_to("/", "Home") }}
+@stop
+
 @section('content')
 
 <h1>Wartungstool</h1>
