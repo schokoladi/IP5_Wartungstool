@@ -21,26 +21,27 @@
         </tr>
         <tr>
             <td class="col1">{{ Form::label('Titel', 'Titel: ') }}</td>
-            <td class="col2">{{ Form::text('Titel') }}</td>
-            <td class="col3"> {{ $errors->first('Titel') }}</td>
+            <td class="col2" colspan="2">{{ Form::text('Titel', null, ['size' => '40']) }}</td>
             <td class="col4">{{ Form::label('Artikelnummer', 'Artikelnummer: ') }}</td>
             <td class="col5">{{ Form::text('Artikelnummer') }}</td>
             <td class="col6">{{ $errors->first('Artikelnummer') }}</td>
         </tr>
         <tr>
             <td class="col1"> {{ Form::label('Beschreibung', 'Beschreibung: ') }}</td>
-            <td class="col2" colspan="2">{{ Form::textarea('Beschreibung') }}</td>
-            <td class="col3"></td>
+            <td class="col2" colspan="2">{{ Form::textarea('Beschreibung', null, [
+                'rows' => '10',
+                'cols' => '10'
+            ]) }}</td>
             <td class="col4"></td>
             <td class="col5"></td>
             <td class="col6"></td>
         </tr>
         <tr>
-            <td class="col1">{{ Form::label('Preis', 'Preis: ') }}</td>
-            <td class="col2">CHF {{ Form::text('Preis') }}</td>
+            <td class="col1">{{ Form::label('Preis', 'Preis in CHF: ') }}</td>
+            <td class="col2">{{ Form::text('Preis') }}</td>
             <td class="col3"> {{ $errors->first('Preis') }}</td>
             <td class="col4">{{ Form::label('Kaufdatum', 'Kaufdatum: ') }}</td>
-            <td class="col5">{{ Form::text('Kaufdatum') }}</td>
+            <td class="col5">{{ Form::text('date', null, array('type' => 'text', 'class' => 'form-control datepicker','placeholder' => 'Pick the date this task should be completed', 'id' => 'calendar')) }}</td>
             <td class="col6">{{ $errors->first('Kaufdatum') }}</td>
         </tr>
     </table>
