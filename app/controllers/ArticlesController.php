@@ -9,7 +9,12 @@ class ArticlesController extends \BaseController {
     }
 
     public function index() {
-        $articles = $this->article->all();
+        //$articles = $this->article->all();
+        //return View::make('articles.index')->withArticles($articles);
+
+        $articles = DB::table('Artikel')
+            ->select('Artikel.Artikelnummer', 'Artikel.Name')
+            ->get();
         return View::make('articles.index')->withArticles($articles);
     }
 
