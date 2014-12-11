@@ -89,6 +89,11 @@ button#form{
     background-color: #CEC1B4;
 }
 
+.btn-menue:hover{
+    background-color: #B6C4CC;
+    border-color: #B6C4CC;
+}
+
 .btn-menue-act {
     margin-bottom: 5px;
     width: 180px;
@@ -124,10 +129,6 @@ h1 {
     font-family: Verdana;
 }
 
-.btn-menue a:hover{
-    color: #4d6878;
-}
-
 .btn-menue-act a{
     font-size: 12px;
     text-decoration: none;
@@ -152,6 +153,11 @@ h1 {
     border-color: #CEC1B4;
     font-size: 11px;
     border-width: 2px;
+}
+
+.btn:hover{
+    background-color: #B6C4CC;
+    border-color: #B6C4CC;
 }
 
 label {
