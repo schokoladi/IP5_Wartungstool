@@ -31,7 +31,7 @@ class Article extends Eloquent {
     ];
 
     public static $messages = [
-        'required' => '<span class="error">*Pflichtfeld</span>'
+        'required' => '<span class="error">*</span>'
     ];
 
     public $errors;

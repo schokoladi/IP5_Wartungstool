@@ -142,7 +142,7 @@ h1 {
 .btn{
     float: right;
     height: 26px;
-    margin-top: 20px;
+    margin-top: 0px;
     padding-left: 12px;
     padding-right: 12px;
     width: auto;
@@ -202,6 +202,12 @@ textarea{
     color: red;
     width: 130px;
     text-align: left;
+    font-weight: bold;
+}
+
+div.errorLabel {
+    text-align: left;
+    align-content: left;
 }
 
 select{

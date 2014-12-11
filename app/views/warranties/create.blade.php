@@ -49,8 +49,30 @@
              <td class = "col5"></td>
              <td class = "col6"></td>
         </tr>
+        <tr>
+             <td class = "col1"></td>
+             <td class = "col2"></td>
+             <td class = "col3"></td>
+             <td class = "col4"></td>
+             <td class = "col5"></td>
+             <td class = "col6"></td>
+        </tr>
+        <tr>
+             <td class = "col1">*Pflichtfelder</td>
+             <td class = "col2"></td>
+             <td class = "col3"></td>
+             <td class = "col4"></td>
+             <td class = "col5"></td>
+             <td class = "col6"></td>
+        </tr>
+
         </table>
+
+
+
+
 
         {{ Form::submit('Garantie speichern', ["class"=>"btn"]) }}
     {{ Form::close() }}
+
 @stop
