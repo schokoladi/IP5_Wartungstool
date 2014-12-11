@@ -16,6 +16,8 @@
 
     {{ Form::open(['route' => 'articles.store']) }}
 
+Test
+
     <table>
         <tr>
             <td class = "col1">{{ Form::label('Artikelhersteller_ID', 'Hersteller:') }}</td>
