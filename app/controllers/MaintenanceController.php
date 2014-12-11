@@ -9,8 +9,12 @@ class MaintenanceController extends \BaseController {
     }
 
     public function index() {
-        $maintenance_pl = $this->maintenance->all();
-        return View::make('maintenance.index')->withMaintenance_pl($maintenance_pl);
+        $maintenance_collection = DB::table('Wartungsvertraege')
+            ->join('Kunden', 'Kunden_ID', '=', 'Kunden.ID')
+            ->join('Kontaktpersonen', 'Kontaktpersonen_ID', '=', 'Kontaktpersonen.ID')
+            ->select('Wartungsvertraege.Vertragsnummer', 'Wartungsvertraege.Titel', 'Kunden.Name', 'Kontaktpersonen.Vorname')
+            ->get();
+        return View::make('maintenance.index')->withMaintenance_collection($maintenance_collection);
     }
 
     public function show($name) {
