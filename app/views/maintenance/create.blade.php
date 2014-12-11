@@ -20,28 +20,23 @@
         <tr>
             <td class = "col1">{{ Form::label('Kunden_ID', 'Kunde:') }}</td>
             <td class = "col2">{{ Form::select('Kunden_ID', $customer_options , $customer_id, ['onChange' => 'this.form.submit()']) }}</td>
-            <td class = "col3"></td>
             @if(!empty($contact_options))
-            <td class = "col4">{{ Form::label('Kontaktpersonen_ID', 'Kontaktperson:') }}</td>
-            <td class = "col5">{{ Form::select('Kontaktpersonen_ID', $contact_options) }}</td>
-            <td class = "col6"></td>
+            <td class = "col3">{{ Form::label('Kontaktpersonen_ID', 'Kontaktperson:') }}</td>
+            <td class = "col4">{{ Form::select('Kontaktpersonen_ID', $contact_options) }}</td>
             @endif
         </tr>
         <tr>
-            <td class = "col1">{{ Form::label('Titel', 'Titel: ') }}</td>
+            <td class = "col1">{{ Form::label('Titel', 'Titel: ') }} {{ $errors->first('Titel') }}</td>
             <td class = "col2">{{ Form::text('Titel') }}</td>
-            <td class = "col3">{{ $errors->first('Titel') }}</td>
-            <td class = "col4">{{ Form::label('Vertragsnummer', 'Vertragsnummer: ') }}</td>
-            <td class = "col5">{{ Form::text('Vertragsnummer') }}</td>
-            <td class = "col6">{{ $errors->first('Vertragsnummer') }}</td>
+            <td class = "col3">{{ Form::label('Vertragsnummer', 'Vertragsnummer: ') }} {{ $errors->first('Vertragsnummer') }}</td>
+            <td class = "col4">{{ Form::text('Vertragsnummer') }}</td>
         </tr>
         <tr>
             <td class = "col1">{{ Form::label('Beschreibung', 'Beschreibung: ') }}</td>
-            <td class = "col2" colspan="2">{{ Form::textarea('Beschreibung') }}</td>
+            <td class = "col2" colspan="1">{{ Form::textarea('Beschreibung') }}</td>
             <td class = "col3"></td>
             <td class = "col4"></td>
-            <td class = "col5"></td>
-            <td class = "col6"></td>
+
         </tr>
     </table>
 

@@ -12,7 +12,7 @@
 <table id="main">
     <tr>
         <td class="colleft"><button type="button" class="btn-main">{{ link_to("/manufacturers/create", "Artikel/Hersteller") }}</button></td>
-        <td class="colright"><button type="button" class="btn-main">{{ link_to("/maintenance/create", "Wartungsverträge") }}</button></td>
+        <td class="colright"><button type="button" class="btn-main">{{ link_to("/maintenance", "Wartungsverträge") }}</button></td>
     </tr>
     <tr>
         <td class="colleft"><button type="button" class="btn-main">{{ link_to("", "Rechnungen") }}</button></td>

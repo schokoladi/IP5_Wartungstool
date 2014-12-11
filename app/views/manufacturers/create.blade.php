@@ -17,12 +17,11 @@
     {{ Form::open(['route' => 'manufacturers.store']) }}
         <table>
         <tr>
-            <td class = "col1">{{ Form::label('Name', 'Herstellername: ') }}</td>
+            <td class = "col1">{{ Form::label('Name', 'Herstellername: ') }} {{ $errors->first('Name') }}</td>
             <td class = "col2">{{ Form::text('Name') }}</td>
-            <td class = "col3">{{ $errors->first('Name') }}</td>
+            <td class = "col3"></td>
             <td class = "col4"></td>
-            <td class = "col5"></td>
-            <td class = "col6"></td>
+
         </tr>
         </table>
 
