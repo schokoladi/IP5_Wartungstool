@@ -10,17 +10,16 @@
 
 <h1>Wartungsverträge</h1>
 
-<button type="button" class="btn-newWA">{{ link_to("/maintenance/create", "neuen WA erfassen") }}</button>
+<button type="button" class="btn-new-WV">{{ link_to("/maintenance/create", "neuen Wartungsvertrag erfassen") }}</button>
 
 <table>
+<tr>
+    <th>Name</th>
+    <th>Kunde</th>
+    <th>Kontaktperson</th>
+</tr>
 @foreach ($maintenance_collection as $maintenance)
     @if($maintenance->Vertragsnummer != NULL)
-        <tr>
-            <th>Name</th>
-            <th>Kunde</th>
-            <th>Kontaktperson</th>
-            <th></th>
-        </tr>
         <tr>
             <td>{{ link_to("maintenance/{$maintenance->Vertragsnummer}", $maintenance->Titel) }}</td>
             <td>{{ $maintenance->Name }}</td>

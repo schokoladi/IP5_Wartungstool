@@ -2,7 +2,7 @@
 @extends('layouts.create')
 
 @section('menu')
-<div id="breadcrumb">{{ link_to("/", "Home") }} > {{ link_to("/show", "Wartungsverträge") }}</div>
+<div id="breadcrumb">{{ link_to("/", "Home") }} > {{ link_to("/maintenance", "Wartungsverträge") }}</div>
 @stop
 
 @section('nav')

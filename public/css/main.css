@@ -80,6 +80,19 @@ button#form{
     padding: 10px;
 }
 
+#table table {
+    width: 80%;
+    text-align: left;
+}
+
+#table table th {
+    font-weight: bold;
+}
+
+#table table tr {
+    border-bottom: 1px solid black;
+}
+
 .btn-menue{
     margin-bottom: 5px;
     width: 180px;
@@ -89,6 +102,11 @@ button#form{
     background-color: #CEC1B4;
 }
 
+.btn-menue:hover {
+    background-color: #B6C4CC;
+    border-color: #B6C4CC;
+}
+
 .btn-menue-act {
     margin-bottom: 5px;
     width: 180px;
@@ -96,6 +114,11 @@ button#form{
     border-radius: 5px;
     border-color: #f4eee7;
     background-color: #f4eee7;
+}
+
+.btm-menue-act:hover{
+    background-color: #B6C4CC;
+    border-color: #B6C4CC;
 }
 
 p {
@@ -152,6 +175,11 @@ h1 {
     border-color: #CEC1B4;
     font-size: 11px;
     border-width: 2px;
+}
+
+.btn:hover{
+    background-color: #B6C4CC;
+    border-color: #B6C4CC;
 }
 
 label {
@@ -217,6 +245,10 @@ td.colright{
     margin: 4px;
 }
 
+.btn-new-WV {
+    float:auto;
+}
+
 #main{
     width: 1080px;
     height: auto;
@@ -229,13 +261,3 @@ td.colright{
     color: #262626;
 
 }
-
-
-
-
-
-
-
-
-
-
