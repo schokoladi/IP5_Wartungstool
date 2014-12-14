@@ -6,7 +6,7 @@
 @stop
 
 @section('nav')
-<button type="button" class="btn-menue">{{ link_to("/maintenance/create", "WA erfassen") }}</button>
+<button type="button" class="btn-menue">{{ link_to("/maintenance/create", "WV erfassen") }}</button>
 <button type="button" class="btn-menue-act">{{ link_to("/maintenancearticles/create", "WV-Artikel hinzufügen") }}</button>
 <button type="button" class="btn-menue">{{ link_to("/services/create", "Service hinzufügen") }}</button>
 @stop

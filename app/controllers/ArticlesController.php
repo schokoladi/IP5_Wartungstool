@@ -24,8 +24,12 @@ class ArticlesController extends \BaseController {
     }
 
     public function create() {
-        $manufacturer_options = DB::table('Artikelhersteller')->orderBy('Name', 'asc')->lists('Name','ID');
-        return View::make('articles.create', array('manufacturer_options' => $manufacturer_options));
+        $manufacturer_options   = DB::table('Artikelhersteller')->orderBy('Name', 'asc')->lists('Name','ID');
+        $currency_options       = DB::table('Waehrungen')->orderBy('ID', 'asc')->lists('Waehrung', 'ID');
+        return View::make('articles.create', [
+            'manufacturer_options'  => $manufacturer_options,
+            'currency_options'      => $currency_options
+        ]);
     }
 
     public function store(){
@@ -42,7 +46,9 @@ class ArticlesController extends \BaseController {
             $this->article->Name                    = Input::get('Name');
             $this->article->Beschreibung            = Input::get('Beschreibung');
             $this->article->Einkaufspreis           = Input::get('Einkaufspreis');
+            $this->article->EK_Waehrungen_ID        = Input::get('EK_Waehrungen_ID');
             $this->article->Verkaufspreis           = Input::get('Verkaufspreis');
+            $this->article->VK_Waehrungen_ID        = Input::get('VK_Waehrungen_ID');
             $this->article->Artikelhersteller_ID    = Input::get('Artikelhersteller_ID');
             $this->article->save();
 

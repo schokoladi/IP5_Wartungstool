@@ -6,7 +6,7 @@
 @stop
 
 @section('nav')
-<button type="button" class="btn-menue">{{ link_to("/maintenance/create", "WA erfassen") }}</button>
+<button type="button" class="btn-menue">{{ link_to("/maintenance/create", "WV erfassen") }}</button>
 <button type="button" class="btn-menue">{{ link_to("/maintenancearticles/create", "WV-Artikel hinzufügen") }}</button>
 <button type="button" class="btn-menue-act">{{ link_to("/services/create", "Service hinzufügen") }}</button>
 @stop
@@ -37,9 +37,9 @@
         </tr>
         <tr>
             <td class="col1">{{ Form::label('Preis', 'Preis: ') }} {{ $errors->first('Preis') }}</td>
-            <td class="col2">{{ Form::text('Preis', null, ['size'=>'8']) }} CHF</td>
+            <td class="col2">{{ Form::text('Preis', null, ['size'=>'8']) }} {{ Form::select('Waehrungen_ID', $currency_options) }}</td>
             <td class="col3">{{ Form::label('Kaufdatum', 'Kaufdatum: ') }} {{ $errors->first('Kaufdatum') }}</td>
-            <td class="col4">{{ Form::text('date', null, array('type' => 'text', 'class' => 'form-control datepicker','placeholder' => 'Pick the date this task should be completed', 'id' => 'calendar')) }}</td>
+            <td class="col4">{{ Form::text('Kaufdatum') }}</td>
         </tr>
     </table>
     {{ Form::submit('Service speichern', ['class' => 'btn']) }}

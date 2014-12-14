@@ -20,8 +20,12 @@ class WarrantiesController extends \BaseController {
     }
 
     public function create() {
-        $artikel_options = DB::table('Artikel')->orderBy('Name', 'asc')->lists('Name','ID');
-        return View::make('warranties.create', array('artikel_options' => $artikel_options));
+        $artikel_options    = DB::table('Artikel')->orderBy('Name', 'asc')->lists('Name','ID');
+        $currency_options   = DB::table('Waehrungen')->orderBy('ID', 'asc')->lists('Waehrung', 'ID');
+        return View::make('warranties.create', [
+            'artikel_options'   => $artikel_options,
+            'currency_options'  => $currency_options
+        ]);
     }
 
     public function store(){
@@ -34,12 +38,14 @@ class WarrantiesController extends \BaseController {
         // Es tritt ein Fehler auf, wenn nur save() aufgerufen wird.
         // Werte müssen nochmals in das Objekt gespeichert werden
         else {
-            $this->warranty->Name           = Input::get('Name');
-            $this->warranty->Beschreibung   = Input::get('Beschreibung');
-            $this->warranty->Einkaufspreis  = Input::get('Einkaufspreis');
-            $this->warranty->Verkaufspreis  = Input::get('Verkaufspreis');
-            $this->warranty->Dauer          = Input::get('Dauer');
-            $this->warranty->Artikel_ID     = Input::get('Artikel_ID');
+            $this->warranty->Name               = Input::get('Name');
+            $this->warranty->Beschreibung       = Input::get('Beschreibung');
+            $this->warranty->Einkaufspreis      = Input::get('Einkaufspreis');
+            $this->warranty->EK_Waehrungen_ID   = Input::get('EK_Waehrungen_ID');
+            $this->warranty->Verkaufspreis      = Input::get('Verkaufspreis');
+            $this->warranty->VK_Waehrungen_ID   = Input::get('VK_Waehrungen_ID');
+            $this->warranty->Dauer              = Input::get('Dauer');
+            $this->warranty->Artikel_ID         = Input::get('Artikel_ID');
             $this->warranty->save();
 
             return Redirect::route('articles.index');

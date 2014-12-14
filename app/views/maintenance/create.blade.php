@@ -6,7 +6,7 @@
 @stop
 
 @section('nav')
-<button type="button" class="btn-menue-act">{{ link_to("/maintenance/create", "WA erfassen") }}</button>
+<button type="button" class="btn-menue-act">{{ link_to("/maintenance/create", "WV erfassen") }}</button>
 <button type="button" class="btn-menue">{{ link_to("/maintenancearticles/create", "WV-Artikel hinzufügen") }}</button>
 <button type="button" class="btn-menue">{{ link_to("/services/create", "Service hinzufügen") }}</button>
 @stop
@@ -15,7 +15,6 @@
     <h1>Neuen Wartungsvertrag erfassen</h1>
 
     {{ Form::open(['route' => 'maintenance.store']) }}
-
     <table>
         <tr>
             <td class = "col1">{{ Form::label('Kunden_ID', 'Kunde:') }}</td>
@@ -39,7 +38,6 @@
 
         </tr>
     </table>
-
-        {{ Form::submit('Wartungsvertrag speichern', ['class' => 'btn', 'name' => 'store']) }}
+    {{ Form::submit('Wartungsvertrag speichern', ['class' => 'btn', 'name' => 'store']) }}
     {{ Form::close() }}
 @stop

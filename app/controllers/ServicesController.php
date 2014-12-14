@@ -19,13 +19,13 @@ class ServicesController extends \BaseController {
     }
 
     public function create() {
-
         $maintenance_id         = Input::get('maintenance_id');
         $maintenance_options    = DB::table('Wartungsvertraege')->orderBy('Titel', 'asc')->lists('Titel', 'ID');
-
+        $currency_options       = DB::table('Waehrungen')->orderBy('ID', 'asc')->lists('Waehrung', 'ID');
         return View::make('services.create', [
             'maintenance_id'        => $maintenance_id,
-            'maintenance_options'   => $maintenance_options
+            'maintenance_options'   => $maintenance_options,
+            'currency_options'      => $currency_options
         ]);
 
     }
@@ -39,13 +39,14 @@ class ServicesController extends \BaseController {
         // Es tritt ein Fehler auf, wenn nur save() aufgerufen wird.
         // Werte müssen nochmals in das Objekt gespeichert werden
         else {
-            $this->service->Artikelnummer = Input::get('Artikelnummer');
-            $this->service->Titel = Input::get('Titel');
-            $this->service->Beschreibung = Input::get('Beschreibung');
-            $this->service->Verrechnet = FALSE;
+            $this->service->Artikelnummer         = Input::get('Artikelnummer');
+            $this->service->Titel                 = Input::get('Titel');
+            $this->service->Beschreibung          = Input::get('Beschreibung');
+            $this->service->Verrechnet            = FALSE;
             //$this->service->Kaufdatum = Input::get('Kaufdatum');
-            $this->service->Preis = Input::get('Preis');
-            $this->service->Wartungsvertraege_ID = Input::get('Wartungsvertraege_ID');
+            $this->service->Preis                 = Input::get('Preis');
+            $this->service->Waehrungen_ID         = Input::get('Waehrungen_ID');
+            $this->service->Wartungsvertraege_ID  = Input::get('Wartungsvertraege_ID');
             $this->service->save();
 
             $maintenance_id = DB::table('Wartungsvertraege')->where('ID', Input::get('Wartungsvertraege_ID'))->pluck('ID');
