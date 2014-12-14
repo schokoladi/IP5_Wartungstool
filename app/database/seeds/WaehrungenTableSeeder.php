@@ -4,6 +4,7 @@ class WaehrungenTableSeeder extends Seeder {
 
     public function run()
     {
+        // Werte löschen
         DB::table('Waehrungen')->delete();
         DB::table('Waehrungen')->insert([
             [

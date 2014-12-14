@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder {
         $this->call('WaehrungenTableSeeder');
         $this->command->info('Waehrungen table seeded!');
 
+        $this->call('KontaktpersonenTableSeeder');
+        $this->command->info('Kontaktpersonen table seeded!');
+
 	}
 
 }

@@ -4,6 +4,7 @@ class KundenTableSeeder extends Seeder {
 
     public function run()
     {
+        // Werte löschen
         DB::table('Kunden')->delete();
         DB::table('Kunden')->insert([
             [
