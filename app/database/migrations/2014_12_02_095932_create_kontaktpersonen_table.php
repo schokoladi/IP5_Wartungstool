@@ -17,8 +17,8 @@ class CreateKontaktpersonenTable extends Migration {
             $table->increments('ID');
             $table->string('Name');
             $table->string('Vorname');
-            $table->string('Rolle');
-            $table->string('Typ');
+            $table->string('Rolle')->nullable();
+            $table->string('Typ')->nullable();
 
             // unsigned ist notwendig bei Fremdschlüsseln!
             $table->integer('Kunden_ID')->unsigned();

@@ -24,6 +24,7 @@ class CreateKundenTable extends Migration {
             $table->string('Ort');
             $table->string('E-Mail');
             $table->string('Telefon');
+            $table->integer('order')->default(1);
 
             $table->timestamps();
 		});

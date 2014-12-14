@@ -17,10 +17,18 @@ class CreateServicesTable extends Migration {
             $table->increments('ID');
             $table->string('Artikelnummer');
             $table->string('Titel');
-            $table->text('Beschreibung');
-            $table->date('Kaufdatum'); // Noch nicht sicher, eventuell anderer Typ
-            $table->decimal('Preis', 8, 2); // Preis mit maximal 8 Stellen, davon 2 Nachkomma
-            $table->boolean('Verrechnet');
+            $table->text('Beschreibung')->nullable();
+
+            // Noch nicht sicher, eventuell anderer Typ
+            $table->date('Kaufdatum')->nullable();
+
+            // Preis mit maximal 10 Stellen, davon 2 Nachkomma
+            $table->decimal('Preis', 10, 2);
+
+            $table->integer('Waehrungen_ID')->unsigned();
+            $table->foreign('Waehrungen_ID')->references('ID')->on('Waehrungen');
+
+            $table->boolean('Verrechnet')->default(FALSE);
 
             // unsigned ist notwendig bei Fremdschlüsseln!
             $table->integer('Wartungsvertraege_ID')->unsigned();

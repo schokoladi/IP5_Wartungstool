@@ -17,12 +17,14 @@ class CreateWartungsvertraegeTable extends Migration {
             $table->increments('ID');
             $table->string('Vertragsnummer');
             $table->string('Titel');
-            $table->text('Beschreibung');
-            $table->boolean('Status');
+            $table->text('Beschreibung')->nullable();
+            $table->boolean('Status')->default(TRUE);
 
             // unsigned ist notwendig bei Fremdschlüsseln!
             $table->integer('Kunden_ID')->unsigned();
             $table->foreign('Kunden_ID')->references('ID')->on('Kunden');
+            $table->integer('Kontaktpersonen_ID')->unsigned();
+            $table->foreign('Kontaktpersonen_ID')->references('ID')->on('Kontaktpersonen');
 
             $table->timestamps();
 		});

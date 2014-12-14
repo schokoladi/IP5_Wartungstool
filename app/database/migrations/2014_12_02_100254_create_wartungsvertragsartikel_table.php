@@ -14,19 +14,20 @@ class CreateWartungsvertragsartikelTable extends Migration {
 	{
 		Schema::create('Wartungsvertragsartikel', function(Blueprint $table)
 		{
-            $table->increments('ID'); // Promary Key
+            $table->increments('ID');
             $table->string('Titel');
             $table->string('Seriennummer');
-            $table->text('Beschreibung');
-            $table->date('Kaufdatum');
-            $table->boolean('Verrechnet');
+            $table->text('Beschreibung')->nullable();
+            $table->date('Kaufdatum')->nullable();
+            $table->boolean('Verrechnet')->default(FALSE);
 
             // unsigned ist notwendig bei Fremdschlüsseln!
             $table->integer('Wartungsvertraege_ID')->unsigned();
             $table->foreign('Wartungsvertraege_ID')->references('ID')->on('Wartungsvertraege');
-            //$table->foreign('Wartungsvertraege_Kunden_ID')->references('ID')->on('Kunden');
+
             $table->integer('Artikel_ID')->unsigned();
             $table->foreign('Artikel_ID')->references('ID')->on('Artikel');
+
             $table->integer('Wartungsartikelhersteller_ID')->unsigned();
             $table->foreign('Wartungsartikelhersteller_ID')->references('ID')->on('Wartungsartikelhersteller');
 

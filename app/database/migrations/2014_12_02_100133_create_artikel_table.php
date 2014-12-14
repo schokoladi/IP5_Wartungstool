@@ -17,11 +17,17 @@ class CreateArtikelTable extends Migration {
             $table->increments('ID');
             $table->string('Artikelnummer');
             $table->string('Name');
-            $table->text('Beschreibung');
-            $table->decimal('Einkaufspreis', 8, 2); // Preis mit maxmal 8 Stellen, davon 2 Nachkomma
-            $table->decimal('Verkaufspreis', 8, 2);
+            $table->text('Beschreibung')->nullable();
+            // Preise mit maxmal 10 Stellen, davon 2 Nachkomma
+            $table->decimal('Einkaufspreis', 10, 2);
+            $table->decimal('Verkaufspreis', 10, 2);
 
             // unsigned ist notwendig bei Fremdschlüsseln!
+            $table->integer('EK_Waehrungen_ID')->unsigned();
+            $table->foreign('EK_Waehrungen_ID')->references('ID')->on('Waehrungen');
+            $table->integer('VK_Waehrungen_ID')->unsigned();
+            $table->foreign('VK_Waehrungen_ID')->references('ID')->on('Waehrungen');
+
             $table->integer('Artikelhersteller_ID')->unsigned();
             $table->foreign('Artikelhersteller_ID')->references('ID')->on('Artikelhersteller');
 

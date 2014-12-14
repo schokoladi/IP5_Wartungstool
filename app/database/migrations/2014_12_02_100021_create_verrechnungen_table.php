@@ -16,8 +16,8 @@ class CreateVerrechnungenTable extends Migration {
 		{
             $table->increments('ID');
             $table->string('Rechnungsnummer');
-            $table->date('Datum');
-            $table->text('Bemerkungen');
+            $table->date('Datum')->nullable();
+            $table->text('Bemerkungen')->nullable();
 
             // unsigned ist notwendig bei Fremdschlüsseln!
             $table->integer('Wartungsvertraege_ID')->unsigned();
