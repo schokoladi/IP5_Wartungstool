@@ -92,10 +92,8 @@ return array(
 	| this array to grant expanded functionality to your applications.
 	|
 	*/
-
+    // added Barryvdh Debugbar
 	'providers' => array(
-
-        'Creitive\Breadcrumbs\BreadcrumbsServiceProvider',
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -148,10 +146,9 @@ return array(
 	| the aliases are "lazy" loaded so they don't hinder performance.
 	|
 	*/
-
+    // added Debugbar
 	'aliases' => array(
 
-        'Breadcrumbs' => 'Creitive\Breadcrumbs\Facades\Breadcrumbs',
         'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
